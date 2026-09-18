@@ -22,3 +22,14 @@ uv pip install -r requirements.txt
 ```bash
 uv run python mock_data/populate.py
 ```
+
+## Danger: to reset the database
+
+This can be useful in the case you update the schema in `schema/init.sql`, because it only runs on an empty
+database. Currently there is no migration mechanism in place for that, so the easiest way is to simply
+delete the volume where the data is stored (the `-v` switch below) and then recreate it (see above for
+[Launching PostgreSQL for local use](#launching-postgresql-for-local-use)).
+
+```bash
+docker compose down -v
+```
