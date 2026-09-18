@@ -49,3 +49,9 @@ delete the volume where the data is stored (the `-v` switch below) and then recr
 ```bash
 docker compose down -v
 ```
+
+## A note for the security minded
+
+Yes, the access credentials are exposed and committed to this public repository, however,
+this is intended only for local use and there is no sensitive data in the database anyway,
+therefore, this is fine.
