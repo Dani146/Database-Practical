@@ -7,3 +7,12 @@ This requires [`docker`](https://www.docker.com/) [to be installed](https://docs
 ```bash
 docker compose up -d
 ```
+
+## Setting up a Python virtual environment
+
+This requires [`uv`](https://docs.astral.sh/uv/) [to be installed](https://docs.astral.sh/uv/getting-started/installation/) and available on `PATH`
+
+```bash
+uv venv --python 3.14
+uv pip install -r requirements.txt
+```
