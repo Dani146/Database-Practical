@@ -23,6 +23,22 @@ uv pip install -r requirements.txt
 uv run python mock_data/populate.py
 ```
 
+## Running SQL queries
+
+The standard way to do this from the command line would follow this template
+```bash
+docker compose exec --user postgres postgres psql -d database -c "<query>"
+```
+
+For example:
+```bash
+docker compose exec --user postgres postgres psql -d database -c "SELECT * FROM ai_tool"
+```
+
+Alternatively you can use a management tool like [`pgAdmin`](https://www.pgadmin.org/) (which can
+also be [launched using `docker`](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#examples)
+if you don't wish to install it otherwise)
+
 ## Danger: deleting the database
 
 This can be useful in the case you update the schema in `schema/init.sql`, because it only runs on an empty
