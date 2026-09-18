@@ -23,7 +23,7 @@ uv pip install -r requirements.txt
 uv run python mock_data/populate.py
 ```
 
-## Danger: to reset the database
+## Danger: deleting the database
 
 This can be useful in the case you update the schema in `schema/init.sql`, because it only runs on an empty
 database. Currently there is no migration mechanism in place for that, so the easiest way is to simply
