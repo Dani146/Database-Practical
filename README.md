@@ -16,3 +16,9 @@ This requires [`uv`](https://docs.astral.sh/uv/) [to be installed](https://docs.
 uv venv --python 3.14
 uv pip install -r requirements.txt
 ```
+
+## Populate the database with mock data
+
+```bash
+uv run python mock_data/populate.py
+```
