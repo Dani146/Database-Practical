@@ -8,6 +8,20 @@ This requires [`docker`](https://www.docker.com/) [to be installed](https://docs
 docker compose up -d
 ```
 
+Database name and access credentials can be found in the [`docker-compose.yaml`](./docker-compose.yaml) file, but they're listed here for visibility
+(just know that this is not the ultimate source of truth):
+```
+Username: postgres
+Password: postgres
+Database: database
+Hostname: localhost
+Port:     5432
+```
+Therefore the so-called connection string would be constructed as follows:
+```
+postgres://postgres:postgres@localhost:5432/database
+```
+
 ## Setting up a Python virtual environment
 
 This requires [`uv`](https://docs.astral.sh/uv/) [to be installed](https://docs.astral.sh/uv/getting-started/installation/) and available on `PATH`
