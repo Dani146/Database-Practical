@@ -92,3 +92,7 @@ docker compose down -v
 Yes, the access credentials are exposed and committed to this public repository, however,
 this is intended only for local use and there is no sensitive data in the database anyway,
 therefore, this is fine.
+
+## Video for the "stakeholders"
+
+https://youtu.be/MRtP6CInFaU
