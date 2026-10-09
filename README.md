@@ -12,6 +12,7 @@ docker compose up -d
 
 Database name and access credentials can be found in the [`docker-compose.yaml`](./docker-compose.yaml) file, but they're listed here for visibility
 (just know that this is not the ultimate source of truth):
+
 ```
 Username: postgres
 Password: postgres
@@ -19,7 +20,9 @@ Database: database
 Hostname: localhost
 Port:     5432
 ```
+
 Therefore the so-called connection string would be constructed as follows:
+
 ```
 postgres://postgres:postgres@localhost:5432/database
 ```
@@ -42,11 +45,13 @@ uv run python mock_data/populate.py
 ## Running SQL queries
 
 The standard way to do this from the command line would follow this template
+
 ```bash
 docker compose exec --user postgres postgres psql -d database -c "<query>"
 ```
 
 For example:
+
 ```bash
 docker compose exec --user postgres postgres psql -d database -c "SELECT * FROM ai_tool"
 ```
