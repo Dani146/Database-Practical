@@ -14,16 +14,6 @@ For our database, we used two publicly available datasets containing information
 
 The original dataset contains around 234,000 job offers from more than 6,000 companies. It includes company names, job titles, locations, publication dates, and information about remote work.
 
-We selected 10,000 job offers and divided the data into three CSV files to match our database structure:
-
-| File | Number of records |
-|---|---:|
-| `companies.csv` | 3,277 |
-| `roles.csv` | 9,198 |
-| `job_offers.csv` | 10,000 |
-
-These files are used to populate the `Company`, `Role`, and `Job_offer` tables.
-
 ### Dataset 2 — AutoVenture AI Tools
 
 - **Source:** https://github.com/autoventure-projects/ai-tools-dataset
@@ -32,11 +22,9 @@ These files are used to populate the `Company`, `Role`, and `Job_offer` tables.
 - **License:** CC BY 4.0
 - **Format:** CSV
 
-The second dataset contains information about AI tools currently available on the market. From the original dataset, we selected 120 different tools to populate our `AI_tool` table.
+The dataset contains information about AI tools currently available on the market.
 
 We only kept the tool names and generated unique IDs, since additional information such as software versions was not consistently available.
-
-Both datasets are free to download, do not require registration, and contain more than 50 unique records.
 
 ## 2. Why We Chose These Datasets
 
@@ -90,12 +78,12 @@ We also checked the AI tool names for duplicates caused by capitalization differ
 
 We reorganized the original data into separate tables to match our ERD.
 
-| Table | Attributes |
-|---|---|
-| Company | `company_id`, `name` |
-| Role | `role_id`, `name` |
+| Table     | Attributes                                                  |
+| --------- | ----------------------------------------------------------- |
+| Company   | `company_id`, `name`                                        |
+| Role      | `role_id`, `name`                                           |
 | Job_offer | `job_offer_id`, `company_id`, `role_id`, `publication_date` |
-| AI_tool | `ai_tool_id`, `name` |
+| AI_tool   | `ai_tool_id`, `name`                                        |
 
 We generated primary keys for each table and connected job offers to their corresponding companies and roles using foreign keys.
 
@@ -104,7 +92,6 @@ We also made a few changes to our original schema. We added `company_id` to `Job
 The cleaned CSV files are prepared for import into our SQL database. After importing them, we still need to run our queries again and check that the constraints work correctly.
 
 ## 5. Schema Constraints and Normalization
-
 
 ## 6. Limitations
 
