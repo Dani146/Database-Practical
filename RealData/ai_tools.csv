@@ -1,0 +1,121 @@
+ai_tool_id,name
+1,Adobe Podcast
+2,AirMusic
+3,Audacity
+4,AudioAI.io
+5,Audo Studio
+6,Clumi AI
+7,Descript
+8,ElevenLabs
+9,Fish Audio
+10,Freesong
+11,KikiVoice
+12,Krisp
+13,Lalal.ai
+14,Mubert
+15,Murf AI
+16,Musicfy
+17,Otter.ai
+18,Play.ht
+19,Resemble AI
+20,SoundTools
+21,Speechify
+22,Suno AI
+23,TTS.ai
+24,TTSMaker
+25,Typecast.ai
+26,Udio
+27,Veed.io
+28,Vocloner
+29,Voicebox
+30,WellSaid
+31,Whisper (OpenAI)
+32,WhisperAI
+33,Activepieces
+34,Adalo
+35,ai.com
+36,Airtable AI
+37,Allyhub
+38,Browse.sh
+39,Bubble
+40,Buda AI
+41,Camunda
+42,Coda AI
+43,Composio
+44,CrewAI
+45,Datadog
+46,Dynatrace
+47,Elastic
+48,Glide
+49,Grafana
+50,Hugging Face Spaces
+51,IFTTT
+52,Kissflow
+53,Klavis AI
+54,Make
+55,Manus
+56,MuleSoft
+57,n8n
+58,New Relic
+59,Notion AI
+60,OpenClaw
+61,OpenWorker
+62,PagerDuty
+63,Pipedream
+64,Power Automate
+65,Process Street
+66,Softr
+67,Splunk
+68,Temporal
+69,Tray.io
+70,Webflow
+71,Workato
+72,WorkBeaver
+73,WorkClaw
+74,Zapier
+75,Zapier AI
+76,Botpress
+77,Chatbase
+78,Chatfuel
+79,Cohere
+80,DeepSeek
+81,Flow XO
+82,Freshdesk Fred AI
+83,Grok
+84,Intercom Fin
+85,Kimi
+86,Landbot
+87,ManyChat
+88,Mistral Le Chat
+89,MobileMonkey
+90,Tars
+91,Tidio
+92,Writer
+93,Zendesk AI
+94,Aider
+95,Amazon Q Developer
+96,Blackbox AI
+97,Bolt.new
+98,Claude Artifacts
+99,Claude Code
+100,Codeium
+101,CodeRabbit
+102,Codium AI
+103,Cursor
+104,Devin
+105,Flatkey AI
+106,GitHub Copilot
+107,Groq
+108,JCode
+109,Jev
+110,Langfuse
+111,Letta
+112,LM Studio
+113,Lovable
+114,NxCode
+115,Open Code Review
+116,OpenInterpreter
+117,Reasonix
+118,Replit
+119,Superagent
+120,Tabnine
