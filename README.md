@@ -38,8 +38,24 @@ uv pip install -r requirements.txt
 
 ## Populate the database with mock data
 
+> [!WARNING]
+> Run this only ONCE, otherwise delete the database and run it again (only ONCE)
+>
+> Run this BEFORE populating the database with "real data"
+
 ```bash
 uv run python mock_data/populate.py
+```
+
+## Populate the database with real data
+
+> [!WARNING]
+> Run this only ONCE, otherwise delete the database and run it again (only ONCE)
+>
+> Make sure to populate the database with "mock data" first if you want to have that, otherwise delete the database and run "mock data" population ONCE and FIRST before running this
+
+```bash
+uv run python real_data/populate.py
 ```
 
 ## Running SQL queries
