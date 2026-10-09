@@ -23,10 +23,14 @@ def insert_table(conn: psycopg.Connection, table_name: str):
         reader = csv.DictReader(file)
 
         for row in reader:
+            # the id column is auto-incremented and does not allow setting a value, overriding is
+            # possible, but would require manually changing the increment value for the table
+            insert_keys = list(row.keys())[1:]
             cur.execute(
-                query=SQL("INSERT INTO {table_name} VALUES ({values})").format(
+                query=SQL("INSERT INTO {table_name} ({keys}) VALUES ({values})").format(
                     table_name=Identifier(table_name),
-                    values=SQL(", ").join(map(Placeholder, row.keys())),
+                    keys=SQL(", ").join(map(Identifier, insert_keys)),
+                    values=SQL(", ").join(map(Placeholder, insert_keys)),
                 ),
                 params=row,
             )
