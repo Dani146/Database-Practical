@@ -1,18 +1,18 @@
 CREATE TABLE Company (
     company_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(50)
+    name VARCHAR(255)
 );
 
 CREATE TABLE Department (
     department_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(50),
+    name VARCHAR(255),
     company_id INT,
     FOREIGN KEY (company_id) REFERENCES Company(company_id)
 );
 
 CREATE TABLE Role (
     role_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(40)
+    name VARCHAR(511)
 );
 
 CREATE TABLE Employee (
