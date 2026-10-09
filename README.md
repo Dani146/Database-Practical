@@ -1,5 +1,7 @@
 # Database Practical
 
+To get some of the data in this repository you will need to have `git-lfs` installed: https://git-lfs.com/
+
 ## Launching PostgreSQL for local use
 
 This requires [`docker`](https://www.docker.com/) [to be installed](https://docs.docker.com/engine/install/) and available on `PATH`
