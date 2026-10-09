@@ -38,21 +38,19 @@ Before using the data, we needed to make a few changes to match our database sch
 
 ### Missing Values
 
-In the job offers dataset, some records did not contain publication dates. Out of the 10,000 selected job offers, 614 had missing dates.
+In the job offers dataset, some records did not contain publication dates.
 
-We left these fields empty rather than generating dates, so they can be stored as `NULL` in SQL.
+We discarded rows with a missing publication date.
 
-The original dataset also did not provide department IDs or job descriptions. Since we could not obtain this information, we removed these columns from our simplified `Job_offer` table.
+The original dataset also did not provide department IDs or job descriptions. Since we could not obtain this information, we simply created departments for each company in this dataset named after the company itself to maintain compatibility with our schema.
 
-For the AI tools dataset, we removed the `version` column because version information was not consistently available.
+For the AI tools dataset, we didn't managed to fill the `version` column because version information was not available, so they were left as `NULL`.
 
 ### Date Formatting
 
 The job publication dates follow the `YYYY-MM-DD` format, which is compatible with the SQL `DATE` data type.
 
-We kept this format during data preparation. Missing dates were left empty.
-
-The AI tools dataset does not contain any date fields that we needed for our database.
+We kept this format during data preparation. Missing dates were discarded.
 
 ### Duplicate Records
 
@@ -72,33 +70,14 @@ Some company names and job titles had differences in capitalization or formattin
 
 We removed unnecessary whitespace but generally kept the original spelling and capitalization to avoid accidentally changing company names or merging different job titles.
 
-We also checked the AI tool names for duplicates caused by capitalization differences.
-
 ## 4. Database Integration
 
-We reorganized the original data into separate tables to match our ERD.
-
-| Table     | Attributes                                                  |
-| --------- | ----------------------------------------------------------- |
-| Company   | `company_id`, `name`                                        |
-| Role      | `role_id`, `name`                                           |
-| Job_offer | `job_offer_id`, `company_id`, `role_id`, `publication_date` |
-| AI_tool   | `ai_tool_id`, `name`                                        |
-
-We generated primary keys for each table and connected job offers to their corresponding companies and roles using foreign keys.
-
-We also made a few changes to our original schema. We added `company_id` to `Job_offer` and removed `department_id` and `description`. We also removed `version` from `AI_tool`.
-
-The cleaned CSV files are prepared for import into our SQL database. After importing them, we still need to run our queries again and check that the constraints work correctly.
-
-## 5. Schema Constraints and Normalization
+The script used for this lives in `./populate.py`
 
 ## 6. Limitations
 
 The main limitation is that the datasets do not provide information about individual employees, internal company departments, or which AI tools are actually used by specific companies.
 
-Because this information is difficult to find in publicly available datasets, we created synthetic data for the `Employee`, `Department`, and `AI_usage` tables.
+Because this information is difficult to find in publicly available datasets, we can't fill all the tables in our database with relevant real-world data. This means the queries are limited to only the tables we can fill and cross-reference from the given data, otherwise we also have a small sample of synthetic data specifically for exploring the whole range of the ERD capabilities.
 
-These records are only used to test the database and do not represent real employees or confirmed AI usage.
-
-The two real-world datasets are therefore used for the `Company`, `Role`, `Job_offer`, and `AI_tool` tables, while the remaining tables contain fictional records for testing purposes.
+The two real-world datasets are therefore used for the `Company`, `Role`, `Job_offer`, and `AI_tool` tables, while the remaining tables contain generated records for testing purposes.
