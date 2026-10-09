@@ -5,7 +5,7 @@
 Written by Adrien
 
 ```
-SELECT 
+SELECT
     c.name AS company_name,
     d.name AS department_name,
     r.name AS role_name,
@@ -17,8 +17,8 @@ JOIN Department d ON e.department_id = d.department_id
 JOIN Company c ON d.company_id = c.company_id
 JOIN Role r ON e.role_id = r.role_id
 JOIN AI_usage au ON d.department_id = au.department_id
-WHERE e.end_time IS NOT NULL 
-  AND e.end_time > au.integration_date 
+WHERE e.end_time IS NOT NULL
+  AND e.end_time > au.integration_date
   -- PostgreSQL syntax for interval comparison
   AND (e.end_time - au.integration_date) <= INTERVAL '6 months'
 ORDER BY (e.end_time - au.integration_date) ASC;

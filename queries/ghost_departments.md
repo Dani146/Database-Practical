@@ -9,8 +9,8 @@ SELECT DISTINCT c.name AS company_name, d.name AS empty_department
 FROM Company c
 JOIN Department d ON c.company_id = d.company_id
 WHERE d.department_id NOT IN (
-    SELECT department_id 
-    FROM Employee 
+    SELECT department_id
+    FROM Employee
     WHERE end_time IS NULL
 )
 ORDER BY company_name;

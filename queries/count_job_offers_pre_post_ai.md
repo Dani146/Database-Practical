@@ -10,7 +10,7 @@ WITH FirstAIIntegration AS (
     FROM AI_usage
     GROUP BY department_id
 )
-SELECT 
+SELECT
     d.name AS department_name,
     f.first_ai_date,
     SUM(CASE WHEN jo.publication_date < f.first_ai_date THEN 1 ELSE 0 END) AS offers_before_ai,

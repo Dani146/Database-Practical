@@ -5,14 +5,14 @@
 Written by Adrien
 
 ```
-SELECT 
+SELECT
     c.name AS company_name,
     d.name AS department_name,
     COUNT(au.ai_tool_id) AS dept_ai_tools,
     (
-        SELECT COUNT(au2.ai_tool_id) 
-        FROM AI_usage au2 
-        JOIN Department d2 ON au2.department_id = d2.department_id 
+        SELECT COUNT(au2.ai_tool_id)
+        FROM AI_usage au2
+        JOIN Department d2 ON au2.department_id = d2.department_id
         WHERE d2.company_id = c.company_id
     ) AS company_total_ai_tools
 FROM Department d

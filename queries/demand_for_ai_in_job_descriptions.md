@@ -5,7 +5,7 @@
 Written by Adrien
 
 ```
-SELECT 
+SELECT
     t.name AS ai_tool,
     COUNT(jo.job_offer_id) AS offers_mentioning_tool
 FROM AI_tool t

@@ -1,13 +1,14 @@
 ## Job offers in departments already using ChatGPT
+
 **Description:** This query answers the question: "What are the current open job positions in departments that have already integrated ChatGPT into their workflow?" It helps target recruitment needs for teams that are already familiar with this specific generative AI tool.
 
 Written by Matiss
 
 ```
-SELECT 
-    jo.publication_date, 
-    c.name AS company_name, 
-    d.name AS department, 
+SELECT
+    jo.publication_date,
+    c.name AS company_name,
+    d.name AS department,
     r.name AS role_name,
     jo.description
 FROM Job_offer jo

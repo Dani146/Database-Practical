@@ -5,7 +5,7 @@
 Written by Adrien
 
 ```
-SELECT 
+SELECT
     c.name AS company_name,
     COUNT(DISTINCT au.ai_usage_id) AS total_ai_deployments,
     COUNT(DISTINCT e.employee_id) AS active_workforce

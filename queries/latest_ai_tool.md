@@ -1,10 +1,11 @@
 ## The latest integrated AI tool by department
+
 **Description:** This query answers the question: "What is the most recently adopted AI tool in each department, and when was it integrated?" It allows management to track the latest technological updates and trends within every single team.
 
 Written by Matiss
 
 ```
-SELECT 
+SELECT
     c.name AS company_name,
     d.name AS department_name,
     t.name AS latest_ai_tool,
