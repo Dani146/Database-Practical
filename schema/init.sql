@@ -1,22 +1,22 @@
 CREATE TABLE Company (
-    company_id INT PRIMARY KEY,
+    company_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(50)
 );
 
 CREATE TABLE Department (
-    department_id INT PRIMARY KEY,
+    department_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(50),
     company_id INT,
     FOREIGN KEY (company_id) REFERENCES Company(company_id)
 );
 
 CREATE TABLE Role (
-    role_id INT PRIMARY KEY,
+    role_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(40)
 );
 
 CREATE TABLE Employee (
-    employee_id INT PRIMARY KEY,
+    employee_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     department_id INT,
     role_id INT,
     start_time DATE,
@@ -27,7 +27,7 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE Job_offer (
-    job_offer_id INT PRIMARY KEY,
+    job_offer_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     department_id INT,
     role_id INT,
     publication_date DATE,
@@ -37,13 +37,13 @@ CREATE TABLE Job_offer (
 );
 
 CREATE TABLE AI_tool (
-    ai_tool_id INT PRIMARY KEY,
+    ai_tool_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(50),
     version VARCHAR(30)
 );
 
 CREATE TABLE AI_usage (
-    ai_usage_id INT PRIMARY KEY,
+    ai_usage_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     department_id INT,
     ai_tool_id INT,
     integration_date DATE,
